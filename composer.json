@@ -1,0 +1,47 @@
+{
+  "name": "rdurica/restnova",
+  "description": "RESTnova is a lightweight and modern PHP client for making HTTP requests, specifically designed for communicating with RESTful APIs. It provides an intuitive interface for sending GET, POST, PUT, DELETE, and other HTTP requests effortlessly.",
+  "keywords": [
+    "REST",
+    "HTTP",
+    "client",
+    "RESTful",
+    "API",
+    "communication"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Rdurica\\Restnova\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Robert Durica",
+      "email": "r.durica@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.1.1",
+    "mockery/mockery": "^1.6.11",
+    "dg/bypass-finals": "^1.4",
+    "squizlabs/php_codesniffer": "^3.9.1",
+    "phpstan/phpstan": "^1.10.66"
+  },
+  "scripts": {
+    "all-checks": [
+      "@phpstan",
+      "@phpcs",
+      "@phpunit"
+    ],
+    "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon",
+    "phpcs": "phpcs --standard=phpcs.xml src/",
+    "phpcbf": "phpcbf --standard=phpcs.xml src/",
+    "phpunit": "vendor/bin/phpunit --stop-on-error --stop-on-failure --colors --testdox --bootstrap='tests/Bootstrap.php' tests/PhpUnit",
+    "phpunit-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --bootstrap='tests/Bootstrap.php' --coverage-html='tests/Coverage' tests/PhpUnit"
+  }
+}
