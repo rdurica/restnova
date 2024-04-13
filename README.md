@@ -11,8 +11,8 @@ effortlessly.
 
 - Simple and intuitive API for sending HTTP requests
 - Supports various HTTP methods: GET, POST, PUT, DELETE, etc.
-- Modern and lightweight design for efficient performance
-- Compatible with PHP 8.3
+- Modern and lightweight design
+- Required PHP >= 8.3
 
 ## Installation
 
@@ -20,6 +20,25 @@ You can install RESTnova via [Composer](https://getcomposer.org).
 
 ```shell
 composer require rdurica/restnova
+```
+## Usage
+```php
+// Create client. All setters are optional.
+$client = Client::create()
+    ->addHeaderItem('User-Agent', 'example')
+    ->setTimeout(10)
+    ->setFollowRedirects(false)
+    ->build();
+
+// Execute request.
+$response = $client->get('https://api-example.robbyte.net/auth');
+
+// Available methods:
+// - get
+// - post
+// - delete
+// - head
+// - patch
 ```
 ## Contributing
 
