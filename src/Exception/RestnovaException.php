@@ -10,6 +10,6 @@ use Exception;
  * @copyright Copyright (c) 2024, Robert Durica
  * @since     2024-04-13
  */
-final class RestnovaException extends Exception
+class RestnovaException extends Exception
 {
 }

@@ -40,8 +40,8 @@
       "@phpunit"
     ],
     "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon",
-    "phpcs": "phpcs --standard=phpcs.xml src/",
-    "phpcbf": "phpcbf --standard=phpcs.xml src/",
+    "phpcs": "vendor/bin/phpcs --standard=phpcs.xml src/ --colors",
+    "phpcbf": "vendor/bin/phpcbf --standard=phpcs.xml src/",
     "phpunit": "vendor/bin/phpunit --stop-on-error --stop-on-failure --colors --testdox --bootstrap='tests/Bootstrap.php' tests/PhpUnit",
     "phpunit-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --bootstrap='tests/Bootstrap.php' --coverage-html='tests/Coverage' tests/PhpUnit"
   }

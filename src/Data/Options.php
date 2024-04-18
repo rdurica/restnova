@@ -10,10 +10,13 @@ namespace Restnova\Data;
  */
 final class Options
 {
-    /** @var string[] Header parameters. */
+    /** @var array<string, string|int> Header parameters. */
     public array $header = [
-        'Accept'       => 'application/json',
-        'Content-Type' => 'application/json'
+        'Host'           => 'restnova.net',
+        'accept'         => 'application/json',
+        'Content-Type'   => 'application/json',
+        'Content-Length' => 0,
+        'User-Agent'     => 'restnova client'
     ];
 
     /** @var int Timeout. */

@@ -10,4 +10,18 @@ namespace Restnova\Data;
  */
 final class Response
 {
+    /** @var string Url. */
+    public string $url;
+
+    /** @var string Content type. */
+    public string $contentType;
+
+    /** @var int Http status code. */
+    public int $httpCode;
+
+    /** @var mixed Response body. */
+    public mixed $body;
+
+    /** @var int Total size of all headers received. */
+    public int $headerSize;
 }
