@@ -127,7 +127,8 @@ final class Request
     private function executeMethod(string $url, Method $method, array $data = []): Response
     {
         try {
-            $json = json_encode($data, JSON_THROW_ON_ERROR);
+
+            $json = empty($data) ? null : json_encode($data, JSON_THROW_ON_ERROR);
 
             return $this->exec($url, $method, $json);
         }
