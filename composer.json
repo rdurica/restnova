@@ -37,12 +37,14 @@
     "all-checks": [
       "@phpstan",
       "@phpcs",
-      "@phpunit"
+      "@phpunit",
+      "@manual-test"
     ],
     "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon",
     "phpcs": "vendor/bin/phpcs --standard=phpcs.xml src/ --colors",
     "phpcbf": "vendor/bin/phpcbf --standard=phpcs.xml src/",
     "phpunit": "vendor/bin/phpunit --stop-on-error --stop-on-failure --colors --testdox --bootstrap='tests/Bootstrap.php' tests/PhpUnit",
-    "phpunit-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --bootstrap='tests/Bootstrap.php' --coverage-html='tests/Coverage' tests/PhpUnit"
+    "phpunit-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --bootstrap='tests/Bootstrap.php' --coverage-html='tests/Coverage' tests",
+    "manual-test": "vendor/bin/phpunit --stop-on-error --stop-on-failure --colors --testdox --bootstrap='tests/Bootstrap.php' tests/Manual"
   }
 }
